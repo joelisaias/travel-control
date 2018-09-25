@@ -1,0 +1,27 @@
+{
+  "name": "travel-ctrl-api",
+  "version": "1.0.0",
+  "description": "Api Rest para control de viajes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "npm-run-all --parallel start:nodemon",
+    "start:nodemon": "nodemon server.js"
+  },
+  "keywords": [
+    "Express",
+    "RestAPI",
+    "MondoDB",
+    "Mongoose"
+  ],
+  "author": "jalvator",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-hateoas-links": "^1.0.9",
+    "mongoose": "^5.2.17",
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3"
+  }
+}
