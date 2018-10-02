@@ -10,7 +10,7 @@ router.post('/pasajeros', pasajeros.create);
 router.get('/pasajeros/', pasajeros.findAll);
 
 // Objetenr lista de pasajeros paginada
-router.get('/pasajeros/page/:page', pasajeros.findAllPaginate);
+router.get('/pasajerosPage/:page', pasajeros.findAllPaginate);
 
 // Buscar pasajero por id
 router.get('/pasajeros/:pasajeroId', pasajeros.findOne);

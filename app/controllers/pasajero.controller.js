@@ -10,10 +10,7 @@ exports.create = (req, res) => {
     }
 
     // Create a Note
-    const pasajero = new Pasajero({
-        nombre: req.body.nombre,
-        numeroViajes: req.body.numeroViajes
-    });
+    const pasajero = new Pasajero(req.body);
 
     // Save Note in the database
     pasajero.save()

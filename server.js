@@ -5,11 +5,12 @@
  * @description: Archivo de configuracion de App Nodejs + Express
  * @version: 1.0
  * 
- * 
  ************************************************************/
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
+//Midleware para manejo de Cross Origins
+const cors = require('cors');
 // Midlewares para configuracion de MongoDB
 const dbConfig = require('./config/database.config');
 const mongoose = require('mongoose');
@@ -17,10 +18,11 @@ const mongoose = require('mongoose');
 const hateoasLinker = require('express-hateoas-links');
 //Importacion de rutas
 const pasajeroRoute = require('./app/routes/pasajero.routes');
+const usuarioRoute = require('./app/routes/seguridad/usuario.router');
 
 // se crea App Express
 const app = express();
-
+app.use(cors());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -28,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use('/api', pasajeroRoute);
+app.use('/api', usuarioRoute);
 
 app.use(hateoasLinker);
 
